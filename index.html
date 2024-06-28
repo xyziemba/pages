@@ -8,5 +8,12 @@ Hello world!
 
   gtag('config', 'G-Z94FG2KKVL');
 
-  throw new Error("boom");
+  try {
+    throw new Error("boom");
+  } catch(err) {
+    gtag('event', 'exception', {
+      'description': err,
+      'fatal': false
+    });
+  }
 </script>
